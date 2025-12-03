@@ -81,6 +81,22 @@ class GitHubMCPServer {
         console.log('✅ Remote added');
       }
 
+      // Check current branch and rename if needed
+      try {
+        const currentBranch = execSync(`"${gitCmd}" rev-parse --abbrev-ref HEAD`, {
+          cwd: this.projectPath,
+          encoding: 'utf8'
+        }).trim();
+        
+        if (currentBranch !== branch) {
+          console.log(`📝 Renaming branch from '${currentBranch}' to '${branch}'...`);
+          execSync(`"${gitCmd}" branch -M ${branch}`, { cwd: this.projectPath, stdio: 'inherit' });
+          console.log(`✅ Branch renamed to '${branch}'`);
+        }
+      } catch (e) {
+        console.log('ℹ️ Could not check branch name');
+      }
+
       // Push to remote
       execSync(`"${gitCmd}" push -u origin ${branch}`, { cwd: this.projectPath, stdio: 'inherit' });
       console.log(`✅ Successfully pushed to ${repoUrl}/${branch}`);
