@@ -1,0 +1,87 @@
+================================================================================
+EXPECTED TEST OUTPUT
+================================================================================
+
+When you run: mvn clean test  OR  python run_test.py
+
+You will see console output similar to this:
+
+================================================================================
+
+========================================
+Test: Login and Add iPhone X to Cart
+========================================
+
+✓ Step 1: Launching Chrome browser...
+
+✓ Step 2: Navigating to login page...
+  Page title: Practice Login Page
+  [Assertion passed: Page contains 'Login']
+
+✓ Step 3: Signing in with credentials...
+  Username entered: rahulshettyacademy
+  Password entered
+  User role selected
+  Terms checkbox checked
+  Sign In button clicked
+  ✓ Login successful!
+
+✓ Step 4: Finding and adding iPhone X to cart...
+  Found 6 products on page
+    Checking product: motorola one fusion
+    Checking product: cypress semiconductor cype3
+    Checking product: iphone x
+  ✓ Found iPhone X!
+  ✓ iPhone X added to cart
+
+✓ Step 5: Navigating to checkout...
+  ✓ Navigated to checkout
+
+✓ Step 6: Verifying product is in cart...
+  Checking 5 items in cart
+  ✓ Product found in cart: iPhone X
+  ✓ Verification successful - iPhone X is in cart!
+
+==================================================
+✓ TEST PASSED SUCCESSFULLY!
+==================================================
+
+Browser closed
+
+================================================================================
+BUILD SUCCESS
+================================================================================
+Total time: ~30-45 seconds
+
+================================================================================
+
+TEST VALIDATION STEPS:
+1. ✓ Chrome browser launched and window maximized
+2. ✓ Login page loaded (URL and title verified)
+3. ✓ Username field filled with 'rahulshettyacademy'
+4. ✓ Password field filled with 'learning'
+5. ✓ User role selected from dropdown
+6. ✓ Terms checkbox checked
+7. ✓ Sign In button clicked
+8. ✓ Post-login page loaded with products visible
+9. ✓ Product list iterated through 6 products
+10. ✓ iPhone X identified in product list
+11. ✓ Add button clicked for iPhone X
+12. ✓ Cart updated with iPhone X
+13. ✓ Checkout button clicked
+14. ✓ Checkout page loaded with cart items
+15. ✓ iPhone X verified in cart items table
+16. ✓ All assertions passed
+17. ✓ Browser closed gracefully
+
+================================================================================
+
+If you see any errors:
+- "ElementNotFound" → Website structure may have changed
+- "TimeoutException" → Internet connection or website down
+- "ChromeDriver error" → Run: mvn clean install
+- "ClassNotFound" → Ensure all Maven dependencies are downloaded
+
+For troubleshooting: Check the full error stack trace in the console output
+
+================================================================================

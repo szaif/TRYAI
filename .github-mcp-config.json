@@ -1,0 +1,21 @@
+{
+  "name": "GitHub MCP Server",
+  "version": "1.0.0",
+  "description": "GitHub MCP Server for pushing Selenium Test Project",
+  "type": "github",
+  "settings": {
+    "autoCommit": true,
+    "autoSync": true,
+    "defaultBranch": "main"
+  },
+  "paths": {
+    "sourceDir": ".",
+    "excludePatterns": [
+      "node_modules",
+      "target",
+      ".git",
+      ".DS_Store",
+      "*.log"
+    ]
+  }
+}
